@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chlorine Dosing Calculator</title>
+</head>
+<body>
+    <h1>Chlorine Dosing Calculator</h1>
+
+    <form method="POST">
+        <label for="solution_tank_volume">Solution Tank Volume (L):</label>
+        <input type="text" id="solution_tank_volume" name="solution_tank_volume" required><br>
+
+        <label for="water_flow_rate">Water Flow Rate (L/hr):</label>
+        <input type="text" id="water_flow_rate" name="water_flow_rate" required><br>
+
+        <label for="required_chlorine_demand">Required Chlorine Demand (mg/L):</label>
+        <input type="text" id="required_chlorine_demand" name="required_chlorine_demand" required><br>
+
+        <label for="chlorine_concentration">Chlorine Concentration (%):</label>
+        <input type="text" id="chlorine_concentration" name="chlorine_concentration" required><br>
+
+        <label for="doser_pump_flow_rate_100">Doser Pump Flow Rate (mL/min at 100%):</label>
+        <input type="text" id="doser_pump_flow_rate_100" name="doser_pump_flow_rate_100" required><br>
+
+        <label for="set_point">Set Point (ppm):</label>
+        <input type="text" id="set_point" name="set_point" required><br>
+
+        <label for="chlorine_last_duration">Duration of Chlorine Last (hr):</label>
+        <input type="text" id="chlorine_last_duration" name="chlorine_last_duration" required><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Amount of chlorine needed: {{ result }} g</h2>
+    {% endif %}
+</body>
+</html>
